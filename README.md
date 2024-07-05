@@ -1,5 +1,7 @@
 # Go TCP chat server
 
+https://protohackers.com/problem/3
+
 ### run the tcp server
 ```
 go build -o server/server server/main.go
