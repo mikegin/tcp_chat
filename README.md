@@ -4,8 +4,8 @@ https://protohackers.com/problem/3
 
 ### run the tcp server
 ```
-go build -o server/server server/main.go
-./server/server
+go build .
+./tcp_chat
 ```
 
 
@@ -19,15 +19,17 @@ Connected to localhost.
 Escape character is '^]'.
 Welcome to budgetchat! What shall I call you?
 alice
+* The room contains: 
 * bob has entered the room
+hey bob!
 * charlie has entered the room
-hey guys!
-[bob] hows it goign
-[charlie] im out of here
+[bob] hey alice, hey charlie!
+[charlie] hey guys!
+[charlie] gotta go!
 * charlie has left the room
-[bob] same
+[bob] same, see ya!
 * bob has left the room
-ok :'(
+off I go!
 ^]
 
 telnet> quit
@@ -42,12 +44,13 @@ Escape character is '^]'.
 Welcome to budgetchat! What shall I call you?
 bob
 * The room contains: alice
+[alice] hey bob!
 * charlie has entered the room
-[alice] hey guys!
-hows it goign
-[charlie] im out of here
+hey alice, hey charlie!
+[charlie] hey guys!
+[charlie] gotta go!
 * charlie has left the room
-same
+same, see ya!
 ^]
 
 telnet> quit
@@ -63,9 +66,9 @@ Escape character is '^]'.
 Welcome to budgetchat! What shall I call you?
 charlie
 * The room contains: alice, bob
-[alice] hey guys!
-[bob] hows it goign
-im out of here
+[bob] hey alice, hey charlie!
+hey guys!
+gotta go!
 ^]
 
 telnet> quit
