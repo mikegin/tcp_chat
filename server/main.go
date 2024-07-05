@@ -97,10 +97,9 @@ func handleRequest(conn net.Conn, people *[]Person) {
 				v.Connection.Write([]byte("* " + name + " has entered the room\n"))
 				names = append(names, v.Name)
 			}
-			if len(names) > 0 {
-				snames := strings.Join(names, ", ")
-				conn.Write([]byte("* The room contains: " + snames + "\n"))
-			}
+
+			snames := strings.Join(names, ", ")
+			conn.Write([]byte("* The room contains: " + snames + "\n"))
 
 			*people = append(*people, Person{Name: name, Connection: conn})
 			newUser = false
