@@ -106,7 +106,7 @@ func handleRequest(conn net.Conn, people *[]Person) {
 		} else {
 			for _, v := range *people {
 				if v.Name != name {
-					v.Connection.Write([]byte("[" + name + "]" + " " + message + "\n\r"))
+					v.Connection.Write([]byte("[" + name + "]" + " " + message + "\n"))
 				}
 			}
 		}
